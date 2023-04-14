@@ -1,0 +1,163 @@
+@import './index.scss';
+
+.App {
+  text-align: center;
+  
+  .App-header {
+    .App-logo {
+      font-family: 'Bebas';
+      color: #E50914;
+      cursor: pointer;
+    }
+
+    .App-searchcontainer {
+      .App-searchicon {
+        font-size: .8em;
+        border-radius: 50%;
+        transition: all .15s ease-in-out;
+        cursor: pointer;
+  
+        &:hover {
+          color: #999;
+        }
+        
+        &:active {
+          font-size: .6em;
+          padding: calc(.2em + .5px) 0 calc(.2em + .5px) 0;
+
+          ~.border {
+            transform: scaleX(1);
+          }
+        }
+      }
+      
+      .App-searchfield {
+        font-family: 'Ubuntu';
+        font-size: .5em;
+        border: none;
+        border-radius: 12px;
+        outline: none;
+        width: 100%;
+        background-color: transparent;
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+
+      .App-resultlist {
+        ul {
+          li {
+            &:hover {
+              background-color: #404040;
+            }
+
+            display: grid;
+            height: 4em;
+            width: 100%;
+            padding: .4em;
+            color: #F9F6EE;
+            background-color: #2b2b2b;
+            border-bottom: solid 1px #999 ;
+            cursor: pointer;
+          }
+
+          &.inactive {
+            display: none;
+          }
+
+          list-style: none;
+          margin-top: 2px;
+          font-family: 'Ubuntu';
+          font-size: .5em;
+        }
+
+        position: absolute;
+        width: 100%;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+
+      .border {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        top: 105%;
+        background: rgb(40, 40, 40);
+        transform: scaleX(0);
+        transition: transform 0.5s;
+        transform-origin:  0% 50%;
+      }
+
+      .App-searchfield:focus + .border {
+        transform: scaleX(1);
+      }
+
+      position: relative;
+      min-width: 40vw;
+      max-width: 50vw;
+      display: grid;
+      gap: 0 .4em;
+      grid-template-columns: 92% 8%;
+      grid-template-rows: auto auto;
+    }
+
+    select {
+      font-family: 'Ubuntu';
+      width: 10em;
+      border-radius: 12px;
+      font-size: .5em;
+      color: black;
+      border: 2px solid black;
+      padding: .2em;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    padding: 0 .6em 0 .6em;
+    min-height: 10vh;
+    width: calc(100% - 1.2em);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+    font-size: calc(1em + 2vmin);
+    z-index: 999;
+  }
+
+  .App-body {
+    font-family: 'Bebas';
+    font-size: 6em;
+    text-shadow: 0 2px 1px #747474, 
+    -1px 3px 1px #787878, 
+    -2px 5px 1px #7f7f7f, 
+    -3px 7px 1px #878787,
+    -4px 9px 1px #8e8e8e,
+    -5px 11px 1px #989898,
+    -6px 13px 1px #a2a2a2,
+    -7px 15px 1px #adadad, 
+    -8px 17px 1px #b6b6b6,
+    -9px 19px 1px #c2c2c2,
+    -10px 21px 1px #cbcbcb,
+    -11px 23px 1px #d5d5d5,
+    -12px 25px 1px #e6e6e6, 
+    -13px 27px 1px #efefef;
+    background-color: #F9F6EE;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+  }
+}
+
+.hide {
+  display: none;
+}
