@@ -41,6 +41,12 @@
         background-color: transparent;
         grid-column-start: 1;
         grid-column-end: 2;
+
+        &:focus {
+          ~.border {
+            transform: scaleX(1);
+          }
+        }
       }
 
       .App-resultlist {
@@ -88,10 +94,6 @@
         transform: scaleX(0);
         transition: transform 0.5s;
         transform-origin:  0% 50%;
-      }
-
-      .App-searchfield:focus + .border {
-        transform: scaleX(1);
       }
 
       position: relative;
